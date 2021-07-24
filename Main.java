@@ -1,37 +1,32 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args){
+        int i = 0;
+        int los;
+        int odp;
+
+        Random rnd = new Random();
+        los = rnd.nextInt(10) + 1;
+
         Scanner scanner = new Scanner(System.in);
-            String name;
-                System.out.println("Your name: ");
-                name = scanner.nextLine();
-                System.out.println("Hello " + name);
-            int age;
-                System.out.println("Your age : ");
-                age = scanner.nextInt();
-                    if( age >= 18 ) {
-                        System.out.println("Hi " + age + " years old bro!");
-                        int money;
-                        System.out.println("Enter your monthly salary: ");
-                        money = scanner.nextInt();
-                            if( money > 2800 ){
-                                System.out.println("You are rich");
-                            }
-                            else if( money == 2800 ){
-                                System.out.println("You are not rich or poor");
-                            }
-                            else{
-                                System.out.println("Hello poor man");
-                            }
-                    }
-                    else{
-                        System.out.println("Hi " + age + " years old child!");
-                    }
-        }
+        System.out.println("Zgadnij liczbe od 1 - 10! ");
+
+        do{
+            i++;
+            System.out.println("Podaj liczbe: ");
+            odp = scanner.nextInt();
+                if(odp > los){
+                    System.out.println("Niestety nie zgadłeś! Moja liczba jest mniejsza.");
+                }
+                else if(odp < los){
+                    System.out.println("Niestety nie zgadłeś! Moja liczba jest większa.");
+                }
+        }while(odp != los);
+
+        System.out.println("Brawo odgadłeś za " + i + " razem!");
+
+
     }
-
-
-
-
-
+}
